@@ -1,0 +1,87 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    width: 300px;
+    height: 240px;
+    overflow: scroll;
+    background-color: aliceblue;
+    display: grid;
+}
+.bms
+{
+    margin-top: 12px;
+    width: 100%;
+    height:220px;
+    display: grid;
+    gap: 5px;
+}
+.bm
+{
+ 
+    height: 20px;
+    width: 100%;
+    padding:8px;
+    border-bottom: 2px solid red;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    
+}
+.bm p
+{
+    height: 100%;
+    display: grid;
+    align-items: center;
+    font-size: 16px;
+}
+.bm .options
+{
+    margin-right: 40px;
+    width: 80%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    align-items: center;
+    margin-bottom: -30px;;
+}
+.bm .options > div
+{
+    width: 70%;
+    height: 70%;
+    display: grid;
+    align-items: center;
+}
+.bm .options > div > svg >path
+{
+    stroke:black;
+    stroke-width: 12px;;
+    fill: transparent;
+    transition: all .25s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.bm .options > .bmplay > svg >path:hover
+{
+    stroke: none;
+    fill: green;
+}
+.bm .options > .bmdelete > svg >path:hover
+{
+    stroke: none;
+    fill: red;
+}
+.bms .support
+{
+    font-size: 17px;
+    color: red;
+    display: grid;
+    padding: 12px;
+    align-items: center;
+}
+.none
+{
+    color: black;
+    font-size: 17px;;
+}
