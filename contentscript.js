@@ -40,7 +40,7 @@ const changeBadge = (num)=>{
         t=player.currentTime;
         const newBm = {
             time:t,
-            description:`bookmarked at :  ${convertHMS(t)} `
+            description:`${convertHMS(t)} `
         }
         fetchBookmarks().then((res)=>{
             currentvideobm=[...res,newBm]

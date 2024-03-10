@@ -77,10 +77,13 @@ const renderData = async(tab)=>{
 
 document.addEventListener("DOMContentLoaded",()=>{
 
-    chrome.tabs.query({active:true},async(tabs)=>{
+    chrome.tabs.query({    active: true,
+        currentWindow: true},async(tabs)=>{
         const tab=tabs[0];
-        if(tab.url && tab.url.includes("youtube.com/watch"))
+        console.log("active tab : ",tab.url)
+        if( tab.url.includes("youtube.com/watch"))
         {
+            console.log("you tube tab : ",tab.url)
             const urlparams = new URLSearchParams(tab.url.split("?")[1])
             console.log(urlparams.get("v"))
               id=urlparams.get("v");
@@ -90,7 +93,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         else
         {
             const bms = document.querySelector(".bms");
-            bms.innerHTML=`<div class="support">This Extension only works for youtube</div>`
+            bms.innerHTML=`<div class="support">This Extension only works for youtube ${tab.url}</div>`
         }
     })
 })
