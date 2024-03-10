@@ -1,11 +1,9 @@
 chrome.tabs.onUpdated.addListener((tabId,changeInfo,tab)=>{
-    console.log(tabId);
     url=tab.url;
     if(url && url.includes("youtube.com/watch"))
     {
         const queryParams=url.split("?")[1];
         const urlParams= new URLSearchParams(queryParams);
-        console.log(urlParams);
         chrome.tabs.sendMessage(tabId,{
             id:tabId,
             type:"new_video",
